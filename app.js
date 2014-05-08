@@ -1,5 +1,18 @@
 var express = require('express');
 var http = require('http');
+//var fs = require('fs');
+//var https = require('https');
+//var privatekey = fs.readFileSync('sslcert/server.key','utf8');
+//var certificate = fs.readFileSync('sslcert/server.crt','utf8');
+
+//var credentials = {key: privateKey, cert: certificate };
+var https = require('https');
+var fs = require('fs');
+//var crypto = require('crypto');
+var options = {
+  key: fs.readFileSync(__dirname + '/ssl/key.pem'),
+  cert: fs.readFileSync(__dirname + '/ssl/key-cert.pem')
+};
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
@@ -10,7 +23,7 @@ var routes = require('./routes');
 var users = require('./routes/user');
 
 var app = express();
-
+https.createServer(options, app).listen(443);
 //app.all(/,*/,function(req,res,next){
 
   /// var host = req.header("host");

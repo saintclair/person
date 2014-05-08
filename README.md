@@ -1,11 +1,11 @@
-Boierplate Person
+Boilerplate Person
 ==================
 
-###Script language
+###script language
 nojejs 0.10.28 - http://nodejs.org
 
-###Framework
+###framework
 expressjs 3.0 - http://expressjs.com/3x/api.html
 
-###Server 
+###server 
 forever - https://npmjs.org/package/forever
